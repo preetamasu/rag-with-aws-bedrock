@@ -35,7 +35,8 @@ public class ChatController {
     @Operation(
             description = "Post endpoint for manager",
             summary = "This is basically used to get the answer from different chat models",
-            responses = {@ApiResponse(
+            responses = {
+                    @ApiResponse(
                     description = "Success",
                     responseCode = "200"
             ),
@@ -65,12 +66,7 @@ public class ChatController {
                  .maxTokens(1000)
                  .build();
 
-//         return ChatClient.create(chatModel)
-//                 .prompt(question)
-//                 .advisors(QuestionAnswerAdvisor.builder(vectorStore).build())
-//                 .options(options)
-//                 .call()
-//                 .content();
+
 
         Prompt prompt = new Prompt(
                 List.of(
